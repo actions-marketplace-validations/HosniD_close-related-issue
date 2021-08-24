@@ -1,5 +1,5 @@
-name: 'Transfer Issue'
-description: 'Transfers github issue from github repo to another github repo'
+name: 'Close Related Issues'
+description: 'Synchronizes issues within a private repo project with issues within a public repo, by closing resolved issues'
 inputs:
   auth-secret:
     description: 'github personal access token, this should be added to your repo secrets'
