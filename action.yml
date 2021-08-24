@@ -1,13 +1,32 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Transfer Issue'
+description: 'Transfers github issue from github repo to another github repo'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  auth-secret:
+    description: 'github personal access token, this should be added to your repo secrets'
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
+  repo-source:
+    description: 'repo to copy from'
+    required: true
+  repo-destination:
+    description: 'repo to copy to'
+    required: true
+  owner-source:
+    description: 'owner of the repo to take issue from'
+    required: false
+  owner-destination:
+    description: 'owner of the repo to save issue to'
+    required: true
+  labels:
+    description: 'issues with this labels will be fetched in source repo: e.g. feature,bug,test.'
+    required: false
+    default:  #empty
+  project:
+    description: 'repo project name to close issues from'
+    required: true
+  column:
+    description: 'repo project column to close issues from'
+    required: true
+
 runs:
   using: 'node12'
   main: 'dist/index.js'

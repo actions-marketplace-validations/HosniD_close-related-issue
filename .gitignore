@@ -1,5 +1,5 @@
 node_modules/
-
+.github/workflows/local.yml
 # Editors
 .vscode/
 .idea/
